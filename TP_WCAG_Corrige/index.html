@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Réserver une séance – Ciné Lumière</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a href="#"><img alt="Ciné Lumière – accueil" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='18' fill='%23f5b301'/%3E%3C/svg%3E"></a>
+  <nav aria-label="Principale"><ul>
+    <li><a href="#films">Films</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul></nav>
+</header>
+<div class="banner" id="banner"><p>Offre -20 % cette semaine !</p>
+  <button class="close" type="button" aria-label="Fermer l'offre" onclick="document.getElementById('banner').remove()">✕</button></div>
+<main>
+  <h1>Réserver une séance</h1>
+
+  <div class="film"><a href="#f1">Film A</a> : 18h00, 20h30</div>
+  <div class="film"><a href="#f2">Film B</a> : 20h30, 22h00</div>
+
+  <form id="resa" novalidate>
+    <label for="nom">Nom</label>
+    <input id="nom" autocomplete="family-name">
+    <label for="email">E-mail</label>
+    <input id="email" type="email" autocomplete="email" aria-describedby="err">
+    <p class="error" id="err" role="alert"></p>
+    <p class="hint">Les places ne sont ni remboursables ni échangeables.</p>
+
+    <h2>Adresse de facturation</h2>
+    <label for="adr1">Adresse</label><input id="adr1" autocomplete="billing street-address">
+    <label for="ville1">Ville</label><input id="ville1" autocomplete="billing address-level2">
+
+    <h2>Adresse d'envoi des billets</h2>
+    <p><input type="checkbox" id="same" checked> <label for="same" style="display:inline">Identique à l'adresse de facturation</label></p>
+    <div id="shipping" hidden>
+      <label for="adr2">Adresse</label><input id="adr2" autocomplete="shipping street-address">
+      <label for="ville2">Ville</label><input id="ville2" autocomplete="shipping address-level2">
+    </div>
+
+    <h2 id="pt">Ordre de préférence des séances</h2>
+    <ul id="prefs" aria-labelledby="pt">
+      <li><span>18h00</span><span><button type="button" data-dir="-1" aria-label="Monter 18h00">↑</button><button type="button" data-dir="1" aria-label="Descendre 18h00">↓</button></span></li>
+      <li><span>20h30</span><span><button type="button" data-dir="-1" aria-label="Monter 20h30">↑</button><button type="button" data-dir="1" aria-label="Descendre 20h30">↓</button></span></li>
+      <li><span>22h00</span><span><button type="button" data-dir="-1" aria-label="Monter 22h00">↑</button><button type="button" data-dir="1" aria-label="Descendre 22h00">↓</button></span></li>
+    </ul>
+    <button type="submit">Réserver</button>
+  </form>
+
+  <h2>Déjà client ?</h2>
+  <form>
+    <label for="login">Identifiant</label><input id="login" autocomplete="username">
+    <label for="pwd">Mot de passe</label><input id="pwd" type="password" autocomplete="current-password">
+    <button type="submit">Se connecter</button>
+  </form>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
