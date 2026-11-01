@@ -1,0 +1,250 @@
+:root {
+  --bleu: #6aaab8;
+  --bleu-fonce: #14586b;
+  --nuit: #12384a;
+  --sable: #f4f3f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Jost", Arial, sans-serif;
+  margin: 0;
+  color: var(--nuit);
+  background: var(--sable);
+}
+
+h1, h2, .logo {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+}
+
+/* ----- En-tête : ciel + mer ----- */
+header {
+  position: relative;
+  overflow: hidden;
+  padding: 28px 6vw 90px;
+  background: linear-gradient(180deg, #d9e7ee 0%, #eaf1f3 60%, var(--sable) 100%);
+}
+
+/* Soleil */
+header::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -60px;
+  top: -140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 70%);
+}
+
+/* Bande de mer en bas */
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 44px;
+  background: linear-gradient(180deg, rgba(106, 170, 184, 0), rgba(79, 155, 171, 0.55));
+}
+
+.topbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--bleu-fonce);
+}
+
+nav a {
+  margin: 0 14px;
+  padding-bottom: 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--nuit);
+}
+nav a.actif { border-bottom: 1px solid var(--bleu-fonce); }
+
+.btn-outline,
+.btn-fill {
+  margin-left: 8px;
+  padding: 8px 18px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.btn-outline { border: 1px solid var(--bleu-fonce); color: var(--bleu-fonce); }
+.btn-fill    { border: 1px solid var(--bleu-fonce); background: var(--bleu-fonce); color: white; }
+
+header h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 16px;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bleu-fonce);
+}
+header p {
+  position: relative;
+  z-index: 1;
+  max-width: 440px;
+  margin: 0 0 32px;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+/* Barre de recherche */
+search {
+  position: relative;
+  z-index: 1;
+}
+search form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: fit-content;
+  padding: 12px 16px;
+  border: 1px solid rgba(20, 88, 107, 0.35);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.65);
+}
+search label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+search input {
+  min-width: 220px;
+  padding: 9px 12px;
+  border: 1px solid rgba(20, 88, 107, 0.3);
+  border-radius: 4px;
+  font-family: inherit;
+  background: white;
+}
+search button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: white;
+  background: var(--bleu-fonce);
+  cursor: pointer;
+}
+
+/* ----- Contenu ----- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 28px 24px 40px;
+}
+
+main h2 {
+  margin: 40px 0 14px;
+  font-size: 2rem;
+  color: var(--bleu-fonce);
+}
+
+main > button {
+  padding: 10px 22px;
+  border: 1px solid var(--bleu-fonce);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bleu-fonce);
+  background: transparent;
+  cursor: pointer;
+}
+
+section {
+  margin: 28px 0;
+  padding: 24px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(20, 88, 107, 0.08);
+}
+section h2 { margin: 0 0 16px; }
+
+article {
+  margin-bottom: 12px;
+  padding: 16px 20px;
+  border: 1px solid #e3e9ea;
+  border-top: 3px solid var(--bleu);
+  border-radius: 4px;
+  background: #fbfcfc;
+}
+
+
+
+
+/* 
+   PARTIE 2 : popover
+   */
+
+[popover] {
+  background: #eef5f6;
+  border: 2px solid var(--bleu-fonce);
+  border-radius: 16px;
+  padding: 16px 24px;
+  color: var(--nuit);
+}
+
+
+/* 
+   PARTIE 3 : :has()
+    */
+
+section:has(.vedette) {
+  border: 2px solid blue;
+  background: #e6edff; /* bonus */
+}
+
+
+/* 
+   PARTIE 4 : Container Queries
+  */
+
+.conteneur {
+  container-type: inline-size;
+  width: 300px; /* tester avec 600px */
+  border: 2px dashed gray;
+  padding: 10px;
+}
+
+.carte {
+  background: lightblue;
+  padding: 10px;
+}
+
+@container (min-width: 500px) {
+  .carte {
+    background: lightgreen;
+  }
+}
