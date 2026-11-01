@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIO Campus - TP JavaScript et Navigator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">BTS SIO • SLAM</p>
+    <h1>SIO Campus</h1>
+    <p>Explore les technologies web et les informations fournies par ton navigateur.</p>
+  </header>
+  <main class="container">
+    <section aria-labelledby="recherche-titre" class="panel">
+      <h2 id="recherche-titre">Catalogue des notions</h2>
+      <label for="recherche">Rechercher une notion</label>
+      <input id="recherche" type="search" placeholder="Ex. : java" autocomplete="off" />
+      <ul id="resultats" class="topics" aria-live="polite"></ul>
+    </section>
+    <section aria-labelledby="navigateur-titre" class="panel">
+      <h2 id="navigateur-titre">Mon navigateur</h2>
+      <dl class="data">
+        <div><dt>Langue préférée</dt><dd id="langue">À compléter…</dd></div>
+        <div><dt>État du réseau</dt><dd id="reseau" role="status">À compléter…</dd></div>
+      </dl>
+      <button type="button" id="copier">Copier le résumé</button>
+      <p id="message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer class="footer">Travail pratique • JavaScript moderne et API Navigator</footer>
+</body>
+</html>

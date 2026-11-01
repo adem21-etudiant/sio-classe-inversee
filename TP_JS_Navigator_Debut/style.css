@@ -1,0 +1,21 @@
+:root { font-family: system-ui, Arial, sans-serif; color: #162339; background: #f4f7fb; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.hero { padding: 42px 24px; color: #fff; background: linear-gradient(120deg,#10233f,#245680); }
+.hero h1 { font-size: clamp(2rem,5vw,3.5rem); margin: 4px 0 8px; }
+.eyebrow { color: #94f0ce; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.container { width: min(980px, 92%); margin: 30px auto; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); }
+.panel { background: #fff; border: 1px solid #dce4ef; border-radius: 18px; padding: 24px; box-shadow: 0 12px 32px #10233f0d; }
+.panel h2 { margin-top: 0; }
+label { display: block; font-weight: 650; margin-bottom: 8px; }
+input { width: 100%; padding: 12px 14px; border: 2px solid #7387a3; border-radius: 9px; font: inherit; }
+input:focus-visible, button:focus-visible { outline: 3px solid #f2a93b; outline-offset: 2px; }
+.topics { padding-left: 0; list-style: none; display: grid; gap: 8px; }
+.topics li { padding: 12px; background: #ecf6f3; border-radius: 8px; }
+.data { margin: 10px 0 18px; }
+.data div { display: flex; gap: 18px; justify-content: space-between; border-bottom: 1px solid #e3eaf3; padding: 12px 0; }
+dt { font-weight: 700; } dd { margin: 0; text-align: right; }
+button { border: 0; padding: 12px 18px; background: #087e68; color: white; border-radius: 9px; cursor: pointer; font: inherit; font-weight: 700; }
+button:hover { background: #06614f; }
+#message { min-height: 1.5em; }
+.footer { text-align: center; color: #597089; font-size: .9rem; padding: 30px 12px; }
